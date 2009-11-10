@@ -10,6 +10,13 @@ colorscheme desert
 hi link RedundantSpaces Error
 match RedundantSpaces /\s\+$\| \+\ze\t/
 
+" set vim to chdir for each file
+if exists('+autochdir')
+  set autochdir
+else
+  autocmd BufEnter * silent! lcd %:p:h:gs/ /\\ /
+endif
+
 "set ts=4
 "set sw=4
 "set et
