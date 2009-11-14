@@ -12,11 +12,13 @@ match RedundantSpaces /\s\+$\| \+\ze\t/
 
 " set vim to chdir for each file
 if exists('+autochdir')
-  set autochdir
+	set autochdir
 else
-  autocmd BufEnter * silent! lcd %:p:h:gs/ /\\ /
+	autocmd BufEnter * silent! lcd %:p:h:gs/ /\\ /
 endif
 
-"set ts=4
-"set sw=4
-"set et
+set hlsearch
+
+"set ts=8
+"set sw=8
+"set noet
