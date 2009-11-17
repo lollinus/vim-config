@@ -1,15 +1,20 @@
-autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
+set incsearch
+set autoindent
+set history=50
+set ruler
+set showcmd
 
-if &t_Co > 1
-	syntax enable
+if has("vms")
+	set nobackup
+else
+	set backup
 endif
 
-colorscheme desert
+if &t_Co > 2 || has("gui_running")
+	syntax on
+	set hlsearch
+endif
 
-" Show trailing whitespace and spaces before tabs
-hi link RedundantSpaces Error
-match RedundantSpaces /\s\+$\| \+\ze\t/
+let g:ccaseUseDialog=0	" Don't use dialog boxes
+let g:ccaseAutoLoad=1	" Reload file after checkin/checkout
 
-"set ts=4
-"set sw=4
-"set et
