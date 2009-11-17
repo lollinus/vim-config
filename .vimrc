@@ -18,3 +18,11 @@ endif
 let g:ccaseUseDialog=0	" Don't use dialog boxes
 let g:ccaseAutoLoad=1	" Reload file after checkin/checkout
 
+"--------------------------------------------------------------------------------
+" set vim to chdir for each file
+if exists('+autochdir')
+  set autochdir
+else
+  autocmd BufEnter * silent! lcd %:p:h:gs/ /\\ /
+endif
+
