@@ -11,7 +11,7 @@ else
 endif
 
 " configure colorscheme
-colorscheme desert
+colorscheme wombat
 
 " highlight whitespace errors in c mode
 let c_space_errors = 1
