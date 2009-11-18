@@ -10,6 +10,9 @@ else
 	set backup
 endif
 
+" highlight whitespace errors in c mode
+let c_space_errors = 1
+
 if &t_Co > 2 || has("gui_running")
 	syntax on
 	set hlsearch
