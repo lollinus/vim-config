@@ -10,6 +10,9 @@ else
 	set backup
 endif
 
+" configure colorscheme
+colorscheme desert
+
 " highlight whitespace errors in c mode
 let c_space_errors = 1
 
