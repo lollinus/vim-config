@@ -1,15 +1,27 @@
-autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
+set incsearch
+set autoindent
+set history=50
+set ruler
+set showcmd
 
-if &t_Co > 1
-	syntax enable
+if has("vms")
+	set nobackup
+else
+	set backup
 endif
 
-colorscheme desert
+" highlight whitespace errors in c mode
+let c_space_errors = 1
 
-" Show trailing whitespace and spaces before tabs
-hi link RedundantSpaces Error
-match RedundantSpaces /\s\+$\| \+\ze\t/
+if &t_Co > 2 || has("gui_running")
+	syntax on
+	set hlsearch
+endif
 
+let g:ccaseUseDialog=0	" Don't use dialog boxes
+let g:ccaseAutoLoad=1	" Reload file after checkin/checkout
+
+"--------------------------------------------------------------------------------
 " set vim to chdir for each file
 if exists('+autochdir')
 	set autochdir
@@ -17,8 +29,3 @@ else
 	autocmd BufEnter * silent! lcd %:p:h:gs/ /\\ /
 endif
 
-set hlsearch
-
-"set ts=8
-"set sw=8
-"set noet
