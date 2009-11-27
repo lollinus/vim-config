@@ -11,7 +11,7 @@ else
 endif
 
 " configure colorscheme
-colorscheme desert
+colorscheme robinhood
 
 " highlight whitespace errors in c mode
 let c_space_errors = 1
@@ -32,3 +32,9 @@ else
 	autocmd BufEnter * silent! lcd %:p:h:gs/ /\\ /
 endif
 
+" doxygen syntax higlighting
+au BufNewFile,BufRead *.doxygen setfiletype doxygen
+
+"set ts=8
+"set sw=8
+"set noet
