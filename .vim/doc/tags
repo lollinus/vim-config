@@ -98,6 +98,8 @@ ccase-thanks	ccase.txt	/*ccase-thanks*
 ccase.txt	ccase.txt	/*ccase.txt*
 cs	surround.txt	/*cs*
 doxygen-support	doxygensupport.txt	/*doxygen-support*
+doxygen-syntax	doxygen.txt	/*doxygen-syntax*
+doxygen.vim	doxygen.txt	/*doxygen.vim*
 doxygensupport-control-macros	doxygensupport.txt	/*doxygensupport-control-macros*
 doxygensupport-customization	doxygensupport.txt	/*doxygensupport-customization*
 doxygensupport-doxygen-templates	doxygensupport.txt	/*doxygensupport-doxygen-templates*
