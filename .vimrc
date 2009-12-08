@@ -1,3 +1,4 @@
+" vim: set ts=8 sw=8 sts=8 foldmethod=syntax noet:
 set incsearch
 set autoindent
 set history=50
@@ -10,15 +11,19 @@ else
 	set backup
 endif
 
-" configure colorscheme
-colorscheme robinhood
-
 " highlight whitespace errors in c mode
 let c_space_errors = 1
 
 if &t_Co > 2 || has("gui_running")
 	syntax on
 	set hlsearch
+endif
+
+" configure colorscheme
+if has("gui_running")
+	colorscheme robinhood
+else
+	colorscheme murphy
 endif
 
 let g:ccaseUseDialog=0	" Don't use dialog boxes
@@ -34,7 +39,3 @@ endif
 
 " doxygen syntax higlighting
 au BufNewFile,BufRead *.doxygen setfiletype doxygen
-
-"set ts=8
-"set sw=8
-"set noet
