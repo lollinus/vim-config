@@ -1,9 +1,15 @@
 " vim: set ts=8 sw=8 sts=8 foldmethod=syntax noet:
 set incsearch
 set autoindent
+set smartindent
 set history=50
 set ruler
 set showcmd
+" visual bell
+set vb t_vb=
+" turn off toolbar
+set guioptions-=T
+
 
 if has("vms")
 	set nobackup
@@ -39,3 +45,11 @@ endif
 
 " doxygen syntax higlighting
 au BufNewFile,BufRead *.doxygen setfiletype doxygen
+
+
+" easy window switch
+map <C-J> <C-W>j<C-W>_
+map <C-K> <C-W>k<C-W>_
+map <C-L> <C-W>l<C-W>_
+map <C-H> <C-W>h<C-W>_
+set wmh=0
