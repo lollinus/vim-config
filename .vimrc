@@ -9,6 +9,7 @@ set showcmd
 set vb t_vb=
 " turn off toolbar
 set guioptions-=T
+filetype on
 
 
 if has("vms")
@@ -53,3 +54,8 @@ map <C-K> <C-W>k<C-W>_
 map <C-L> <C-W>l<C-W>_
 map <C-H> <C-W>h<C-W>_
 set wmh=0
+
+" taglist plugin
+nnoremap <silent> <F8> :TlistToggle<CR>
+let Tlist_Show_Menu = 1
+let Tlist_Auto_Highlight_Tag = 1
