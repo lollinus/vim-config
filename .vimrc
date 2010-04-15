@@ -21,6 +21,19 @@ endif
 " highlight whitespace errors in c mode
 let c_space_errors = 1
 
+set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L] 
+map <silent> <F11> :if &guioptions =~# 'T' <Bar>
+	\simalt ~X<CR> <Bar> 
+	\set guioptions-=T <Bar>
+	\set guioptions-=m <Bar>
+	\set guioptions+=C <Bar>
+	\else <Bar>
+	\set guioptions+=T <Bar>
+	\set guioptions+=m <Bar>
+	\set guioptions-=C <Bar>
+	\simalt ~R<CR> <Bar> 
+	\endif<CR>
+
 if &t_Co > 2 || has("gui_running")
 	syntax on
 	set hlsearch
