@@ -21,7 +21,7 @@ endif
 " highlight whitespace errors in c mode
 let c_space_errors = 1
 
-set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L] 
+set statusline=%F%m%r%h%w\ [FORMAT=%{&FF}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
 map <silent> <F11> :if &guioptions =~# 'T' <Bar>
 	\simalt ~X<CR> <Bar> 
 	\set guioptions-=T <Bar>
@@ -72,3 +72,16 @@ set wmh=0
 nnoremap <silent> <F8> :TlistToggle<CR>
 let Tlist_Show_Menu = 1
 let Tlist_Auto_Highlight_Tag = 1
+
+" Convert slashes to backslashes for Windows.
+if has('win32')
+  nmap ,cs :let @*=substitute(expand("%"), "/", "\\", "g")<CR>
+  nmap ,cl :let @*=substitute(expand("%:p"), "/", "\\", "g")<CR>
+
+  " This will copy the path in 8.3 short format, for DOS and Windows 9x
+  nmap ,c8 :let @*=substitute(expand("%:p:8"), "/", "\\", "g")<CR>
+else
+  nmap ,cs :let @*=expand("%")<CR>
+  nmap ,cl :let @*=expand("%:p")<CR>
+endif
+
