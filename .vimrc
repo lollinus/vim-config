@@ -41,9 +41,11 @@ endif
 
 " configure colorscheme
 if has("gui_running")
-	colorscheme robinhood
+	colorscheme solarized
+	set background=dark
 else
-	colorscheme murphy
+	colorscheme solarized
+	set background=dark
 endif
 
 let g:ccaseUseDialog=0	" Don't use dialog boxes
