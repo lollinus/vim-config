@@ -11,6 +11,9 @@ set vb t_vb=
 set guioptions-=T
 filetype on
 
+" buffer size
+set viminfo='20,<1000,s1000
+
 
 if has("vms")
 	set nobackup
@@ -40,9 +43,11 @@ if &t_Co > 2 || has("gui_running")
 endif
 
 " configure colorscheme
-if has("gui_running")
+let g:solarized_termcolors=256
+" let g:solarized_termtrans=0
+if has('gui_running')
 	colorscheme solarized
-	set background=dark
+	set background=light
 else
 	colorscheme solarized
 	set background=dark
@@ -69,6 +74,18 @@ map <C-K> <C-W>k<C-W>_
 map <C-L> <C-W>l<C-W>_
 map <C-H> <C-W>h<C-W>_
 set wmh=0
+
+" Gtags config
+map <C-n> :cn<CR>
+map <C-p> :cp<CR>
+
+set laststatus=2 "turns on vim-arirline at startup
+if has("gui_gtk2")
+    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
+endif
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1 "tabline enable
+let g:airline#extensions#tabline#fnamemod = ':t' "filenames only in tabs
 
 " taglist plugin
 nnoremap <silent> <F8> :TlistToggle<CR>
